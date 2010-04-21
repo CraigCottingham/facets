@@ -247,5 +247,12 @@ module Indexable
     end
   end
 
+  # Returns a random element.
+  # Semantics for the parameter are similar to those for Kernel.rand.
+  #
+  def rand(max=0)
+    slice(Kernel.rand(max==0 ? size : [max, size].min),1)
+  end
+
 end
 
